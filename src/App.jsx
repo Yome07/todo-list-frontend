@@ -23,15 +23,13 @@ import ContactForm from './components/ContactForm';
 import * as Sentry from '@sentry/react';
 // Add this button component to your app to test Sentry's error tracking
 function ErrorButton() {
-    return (
-        <button
-            onClick={() => {
-                throw new Error('This is your first error!');
-            }}
-        >
-            Break the world
-        </button>
-    );
+    const handleCrash = () => {
+        // Cette fonction va planter car 'undefined' n'a pas de propriété 'name'
+        const user = undefined;
+        console.log(user.name);
+    };
+
+    return <button onClick={handleCrash}>Crash Test</button>;
 }
 
 function App() {
