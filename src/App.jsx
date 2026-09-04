@@ -20,6 +20,19 @@ import AlertError from "./components/AlertError.jsx";
 /*
 import ContactForm from './components/ContactForm';
 */
+import * as Sentry from '@sentry/react';
+// Add this button component to your app to test Sentry's error tracking
+function ErrorButton() {
+    return (
+        <button
+            onClick={() => {
+                throw new Error('This is your first error!');
+            }}
+        >
+            Break the world
+        </button>
+    );
+}
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -174,7 +187,7 @@ function App() {
     return (
         <div className="container mt-5">
             <h1 className="text-center mb-4">Ma To-Do List par Catégories</h1>
-
+            <ErrorButton />
             {isLoading && <LoadingSpinner  message="Chargement des données..."/>}
 
 
