@@ -10,15 +10,25 @@
  * @returns {JSX.Element} Liste des tâches filtrées ou message si aucune tâche
  */
 import TaskItem from './TaskItem';
+import * as Sentry from '@sentry/react';
 
-function TestComponent() {
+function CrashTestButton() {
     const handleCrash = () => {
-        // Cette fonction va planter car 'undefined' n'a pas de propriété 'name'
-        const user = undefined;
-        console.log(user.name);
+        try {
+            // Cette fonction va planter car 'undefined' n'a pas de propriété 'name'
+            const user = undefined;
+            console.log(user.name);
+        } catch (error) {
+            Sentry.captureException(error);
+            throw error;
+        }
     };
 
-    return <button onClick={handleCrash}>Crash Test</button>;
+    return (
+        <button type="button" className="btn btn-danger mb-3" onClick={handleCrash}>
+            Crash Test
+        </button>
+    );
 }
 
 const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => {
@@ -31,11 +41,10 @@ const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => 
 
     console.log('FilteredTasks:', filteredTasks);
 
-    TestComponent();
-
     return (
         <div className="tasks-list">
             <h5 className="mb-3">Liste des tâches</h5>
+            <CrashTestButton />
             {filteredTasks.length === 0 && (
                 <div className="alert alert-info text-center" role="alert">
                     Aucune tâche à afficher.
