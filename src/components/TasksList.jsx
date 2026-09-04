@@ -44,7 +44,7 @@ const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => 
     return (
         <div className="tasks-list">
             <h5 className="mb-3">Liste des tâches</h5>
-            <CrashTestButton />
+            {/*<CrashTestButton />*/}
             {filteredTasks.length === 0 && (
                 <div className="alert alert-info text-center" role="alert">
                     Aucune tâche à afficher.
