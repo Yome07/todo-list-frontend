@@ -13,7 +13,7 @@ const Button = ({onClick, label, type}) => {
     
     
     return <button 
-        className={"btn btn-default"}
+        className={"btn btn-blue"}
         type={type} 
         onClick={onClick}
     >
