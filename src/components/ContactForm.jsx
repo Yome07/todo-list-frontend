@@ -37,7 +37,7 @@ const ContactForm = () => {
             <div className="card-body">
                 <h3 className="mb-3">Contact</h3>
 
-                <form onSubmit={handleSubmit} data-netlify="true">
+                <form onSubmit={handleSubmit} netlify>
                     <div className="mb-3">
                         <label htmlFor="contact-name" className="form-label">Nom</label>
                         <input
