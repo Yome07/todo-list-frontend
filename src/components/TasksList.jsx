@@ -11,6 +11,16 @@
  */
 import TaskItem from './TaskItem';
 
+function TestComponent() {
+    const handleCrash = () => {
+        // Cette fonction va planter car 'undefined' n'a pas de propriété 'name'
+        const user = undefined;
+        console.log(user.name);
+    };
+
+    return <button onClick={handleCrash}>Crash Test</button>;
+}
+
 const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => {
     console.log('Tasks:', tasks);
     console.log('FilterCategory:', filterCategory);
@@ -20,6 +30,9 @@ const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => 
         : tasks.filter(task => task.category.id === filterCategory);
 
     console.log('FilteredTasks:', filteredTasks);
+
+    TestComponent();
+
     return (
         <div className="tasks-list">
             <h5 className="mb-3">Liste des tâches</h5>
