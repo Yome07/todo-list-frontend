@@ -6,11 +6,11 @@
  *
  * @returns {JSX.Element} Le formulaire de contact.
  */
-/*import { useState } from 'react';
-import Button from './Button';*/
+import { useState } from 'react';
+import Button from './Button';
 
 const ContactForm = () => {
-    /*const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
@@ -30,14 +30,14 @@ const ContactForm = () => {
         console.log('Message de contact envoyé :', formData);
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
-    };*/
+    };
 
     return (
         <div className="card shadow-sm mt-4">
             <div className="card-body">
                 <h3 className="mb-3">Contact</h3>
 
-                {/*<form onSubmit={handleSubmit} netlify>
+                <form onSubmit={handleSubmit} netlify>
                     <div className="mb-3">
                         <label htmlFor="contact-name" className="form-label">Nom</label>
                         <input
@@ -87,26 +87,6 @@ const ContactForm = () => {
                             Votre message a bien été envoyé.
                         </p>
                     )}
-                </form>*/}
-                <form name="contact" method="POST" data-netlify="true">
-                    <p>
-                        <label>Your Name: <input type="text" name="name" /></label>
-                    </p>
-                    <p>
-                        <label>Your Email: <input type="email" name="email" /></label>
-                    </p>
-                    <p>
-                        <label>Your Role: <select name="role[]" multiple>
-                            <option value="leader">Leader</option>
-                            <option value="follower">Follower</option>
-                        </select></label>
-                    </p>
-                    <p>
-                        <label>Message: <textarea name="message"></textarea></label>
-                    </p>
-                    <p>
-                        <button type="submit">Send</button>
-                    </p>
                 </form>
             </div>
         </div>

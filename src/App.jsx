@@ -17,7 +17,9 @@ import TasksList from './components/TasksList';
 import CategoryFilter from './components/CategoryFilter';
 import LoadingSpinner from "./components/LoadingSpinner.jsx";
 import AlertError from "./components/AlertError.jsx";
+/*
 import ContactForm from './components/ContactForm';
+*/
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -213,7 +215,7 @@ function App() {
                 removeTask={removeTask}
             />
 
-            <ContactForm />
+            {/*<ContactForm />*/}
 
         </div>
     )
