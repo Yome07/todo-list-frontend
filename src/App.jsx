@@ -21,6 +21,8 @@ import AlertError from "./components/AlertError.jsx";
 import ContactForm from './components/ContactForm';
 */
 import * as Sentry from '@sentry/react';
+import Button from "./components/Button.jsx";
+
 // Add this button component to your app to test Sentry's error tracking
 function ErrorButton() {
     const handleCrash = () => {
@@ -29,7 +31,7 @@ function ErrorButton() {
         console.log(user.name);
     };
 
-    return <button onClick={handleCrash}>Crash Test</button>;
+    return <Button label="Crash Test" onClick={handleCrash} />
 }
 
 function App() {
