@@ -34,5 +34,8 @@ jobs:
       - name: 4. Installation des dépendances
         run: npm ci
 
+      - name: Exécution du linter (ESLint)
+        run: npm run lint
+
       - name: 5. Exécution des tests
         run: npm test

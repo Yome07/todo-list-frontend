@@ -12,6 +12,9 @@
 import TaskItem from './TaskItem';
 
 const TasksList = ({tasks, filterCategory, toggleTaskCompleted, removeTask}) => {
+    // Dans un composant React
+    let maVariable = "test"; // ESLint va se plaindre : "'maVariable' is never reassigned. Use 'const' instead."
+    console.log(maVariable);
     console.log('Tasks:', tasks);
     console.log('FilterCategory:', filterCategory);
 
