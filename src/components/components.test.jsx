@@ -16,7 +16,7 @@ describe("FormCategory", () => {
         fireEvent.change(input, { target: { value: "Courses" } });
         fireEvent.click(screen.getByRole("button", { name: "Ajouter catégorie" }));
 
-        expect(addCategory).toHaveBeenCalledWith("Course");
+        expect(addCategory).toHaveBeenCalledWith("Courses");
         expect(input.value).toBe("");
     });
 });
