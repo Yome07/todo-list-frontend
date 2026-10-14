@@ -10,7 +10,7 @@
  * 
  */
 const Button = ({onClick, label, type}) => {
-    
+    const lintError = "Erreur volontaire pour vérifier ESLint";
     
     return <button 
         className={"btn btn-primary"}
